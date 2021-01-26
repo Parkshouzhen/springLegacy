@@ -17,4 +17,25 @@
   	
   	insert into TBL_BOARD values(#{bno}, #{title}, #{content}, #{writer}, sysdate, sysdate)
   	</insert>
+  	
+  	<select id="read" resultType="org.zerock.domain.BoardVO">
+  		select * from TBL_BOARD where bno = #{bno}
+  	</select>
+  	
+  	<delete id="delete">
+  		delete from tbl_board where bno = #{bno}
+  	</delete>
+  	
+  	<update id="update">
+  		update tbl_board
+  		set title = #{title},
+  		content = #{content},
+  		writer = #{writer},
+  		updteDate = sysdate
+  		where bno = #{bno}
+  	</update>
+  
+  	
+  	
+  
   </mapper>

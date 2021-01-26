@@ -52,4 +52,31 @@ public class BoardMapperTests {
 		log.info("--------------------------------");
 		log.info("after insert selectKey" + vo.getBno());
 	}
+	
+	@Test
+	public void testRead() {
+		
+		BoardVO vo = boardMapper.read(9L);
+		log.info(vo);
+	}
+	
+	@Test
+	public void testDelete() {
+		int count = boardMapper.delete(3L);
+		log.info("count: " + count);
+	}
+	
+	@Test
+	public void testUpdate() {
+		
+		BoardVO vo = new BoardVO();
+		
+		vo.setBno(5L);
+		vo.setTitle("하잉");
+		vo.setWriter("잇츠미소분");
+		vo.setContent("박소분이야나는");
+		
+		log.info("count: " + boardMapper.update(vo));
+	
+	}
 }
