@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-ihi
+	<h1>해당 URL은 존재하지 않습니다.</h1>
 </body>
 </html>
