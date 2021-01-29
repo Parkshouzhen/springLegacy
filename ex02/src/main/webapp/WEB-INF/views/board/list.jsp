@@ -1,6 +1,9 @@
 <%@page import="com.fasterxml.jackson.annotation.JsonInclude.Include"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@include file="../includes/header.jsp"%>
 <div class="row">
 	<div class="col-lg-12">
@@ -19,21 +22,23 @@
 					>
 					<thead>
 						<tr>
-							<th>Rendering engine</th>
-							<th>Browser</th>
-							<th>Platform(s)</th>
-							<th>Engine version</th>
-							<th>CSS grade</th>
+							<th>번호</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>수정일</th>
 						</tr>
 					</thead>
 					<tbody>
+					<c:forEach items="${list}" var="board">
 						<tr class="odd gradeX">
-							<td>Trident</td>
-							<td>Internet Explorer 4.0</td>
-							<td>Win 95+</td>
-							<td class="center">4</td>
-							<td class="center">X</td>
+							<td>${board.bno}</td>
+							<td>${board.title}</td>
+							<td>${board.writer}</td>
+							<td><fmt:formatDate pattern="yyyy-MM-dd" value= "${board.regDate}"/></td>
+							<td><fmt:formatDate pattern="yyyy-MM-dd" value= "${board.updateDate}"/></td>
 						</tr>
+					</c:forEach>
 					</tbody>
 				</table>
 				<!-- /.table-responsive -->
