@@ -72,7 +72,7 @@ public class BoardMapperTests {
 		BoardVO vo = new BoardVO();
 		
 		vo.setBno(5L);
-		vo.setTitle("하잉");
+		vo.setTitle("하잉방가");
 		vo.setWriter("잇츠미소분");
 		vo.setContent("박소분이야나는");
 		

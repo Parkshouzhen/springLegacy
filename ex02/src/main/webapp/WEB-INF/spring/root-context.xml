@@ -33,6 +33,7 @@
 	</bean> <!-- SQLSession을 통해 Connection생성하거나 원하는 sql전달, 결과를 리턴 받는 구조 -->
 	
 	<mybatis-spring:scan base-package="org.zerock.mapper"/>
+	<context:component-scan base-package="org.zerock.service"></context:component-scan>
 	
 	<context:component-scan base-package="org.zerock.sample"></context:component-scan> 
 	
