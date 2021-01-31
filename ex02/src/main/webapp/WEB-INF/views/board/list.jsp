@@ -84,9 +84,12 @@
 		var rs = '<c:out value="${result}"/>';
 
 		checkModal(rs);
+		
+		// 브라우저에서 보관하고 있는 데이터 지움
+		history.replaceState({}, null, null);
 
 		function checkModal(rs) {
-			if (rs == '') {
+			if (rs == ''||history.state) {
 				return;
 			}
 			if (parseInt(rs) > 0) {
